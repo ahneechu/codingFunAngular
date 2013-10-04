@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css"> -->
+        <link rel="stylesheet" href="style.css">
+
+        <link href='http://fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
+         <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+        <script src="ticTacCtrl.js"></script>
+    </head>
+
+    <body ng-app="">
+
+         <!--  <h1>Tic Tac Toe</h1>
+ -->
+        <div class="container" ng-controller="ticTacCtrl">
+           
+          
+           <div ng-class="{box: true}" ng-repeat="box in gameBoard track by $index" ng-click="clickBox($index); win(); tie()">
+           {{"box" + $index}}
+
+          <!-- <div class="container"> -->
+
+           <!--  <div ng-repeat="box in gameBoard track by $index"> -->
+           <!--  {{"box" + $index }} -->
+          
+                <!-- <div id="box1" class="box top_row col1" ></div>
+                <div id="box2" class="box top_row col2" ></div>
+                <div id="box3" class="box top_row col3" ></div>
+                <div class="clearfix"></div>
+
+                <div id="box4" class="box mid_row col1" ></div>
+                <div id="box5" class="box mid_row col2" ></div>
+                <div id="box6" class="box mid_row col3" ></div>
+                <div class="clearfix"></div>
+
+                <div id="box7" class="box bottom_row col1" ></div>
+                <div id="box8" class="box bottom_row col2" ></div>
+                <div id="box9" class="box bottom_row col3" ></div>
+                <div class="clearfix"></div> -->
+            </div>
+            
+            <!-- <input type="button" id="btn" value="Play Now!" onClick="buttonClick()"> -->
+
+         </div>
+       
+    </body>
+</html>
