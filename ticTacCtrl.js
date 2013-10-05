@@ -6,6 +6,8 @@ var playerTurn= 1;
 
 var gameEnded = false;
 
+$scope.winMsg = false;
+
 
 
 $scope.clickBox = function(box){
@@ -38,7 +40,8 @@ $scope.win = function(){
 					($scope.gameBoard[wins[i][1]] == $scope.gameBoard[wins[i][2]]))
 					{
 				
-						alert($scope.gameBoard[wins[i][0]] + " win! by " + wins[i][3]);
+						$scope.winMsg = true;
+						// alert($scope.gameBoard[wins[i][0]] + " win! by " + wins[i][3]);
 						gameEnded = true;
 					} 				
 	}
@@ -54,10 +57,12 @@ $scope.tie = function(){
 
 		if (gameEnded)
 		{
-			alert("it's a tie!");
+			$scope.winMsg = true;
+			// alert("it's a tie!");
 			gameEnded = true;
 		}
 }
+
 
 // function hidePopup() {
 // 	document.getElementById("startBtn").style.display="none";
@@ -71,10 +76,22 @@ $scope.resetClick = function(){
 		$scope.gameBoard[i] = '';	
 	}
 	// gameBoard = ['','','','','','','','',''];
+	playerTurn = 1;
 	console.log($scope.gameBoard);
 	// alert( "my button was clicked!");
 }
 
+$scope.playAgain = function(){
+	// var box = $scope.gameBoard[box]; 
+	for(var i = 0; i < $scope.gameBoard.length; i++){
+		$scope.gameBoard[i] = '';	
+	}
+	// gameBoard = ['','','','','','','','',''];
+	$scope.winMsg = false;
+	playerTurn = 1;
+	console.log($scope.gameBoard);
+	// alert( "my button was clicked!");
+}
 
 }
 	
