@@ -15,11 +15,12 @@ $scope.clickBox = function(box){
 	return;
 
 		if(playerTurn % 2 == 1)
-			event.target.innerHTML = "X";	
+			$scope.gameBoard[box] = "X";	
 		else
-			event.target.innerHTML ="O";
+			$scope.gameBoard[box] ="O";
 
-		$scope.gameBoard[box]=event.target.innerHTML;
+		// $scope.gameBoard[box]=event.target.innerHTML;
+		console.log($scope.gameBoard)
 
 		++playerTurn;
 // alert(box);	
@@ -56,8 +57,24 @@ $scope.tie = function(){
 			alert("it's a tie!");
 			gameEnded = true;
 		}
-
 }
+
+// function hidePopup() {
+// 	document.getElementById("startBtn").style.display="none";
+// 	document.getElementById("gameBoard").style.display="block";
+// 	document.getElementById("resetBtn").style.display="block";
+// }
+
+$scope.resetClick = function(){
+	// var box = $scope.gameBoard[box]; 
+	for(var i = 0; i < $scope.gameBoard.length; i++){
+		$scope.gameBoard[i] = '';	
+	}
+	// gameBoard = ['','','','','','','','',''];
+	console.log($scope.gameBoard);
+	// alert( "my button was clicked!");
+}
+
 
 }
 	

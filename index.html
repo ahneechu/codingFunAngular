@@ -22,20 +22,22 @@
         <script src="ticTacCtrl.js"></script>
     </head>
 
-    <body ng-app="">
+    <body ng-app="" ng-controller="ticTacCtrl" ng-init="showDetails = false">
 
-         <!--  <h1>Tic Tac Toe</h1>
- -->
-        <div class="container" ng-controller="ticTacCtrl">
+      <div id="wrapper">
+        <h1>Tic Tac Toe</h1>
+
+        <input type = "button" id="startBtn" class="btn" value="Start Game!" ng-click="showDetails = ! showDetails" ng-hide="showDetails" />
+
+        <input type = "button" id="winMsg" class="btn" value="Play again?" ng-click="resetClick()" />
+
+        <div class="container" ng-show="showDetails">
            
           
            <div ng-class="{box: true}" ng-repeat="box in gameBoard track by $index" ng-click="clickBox($index); win(); tie()">
-           {{"box" + $index}}
+           {{box}}
 
           <!-- <div class="container"> -->
-
-           <!--  <div ng-repeat="box in gameBoard track by $index"> -->
-           <!--  {{"box" + $index }} -->
           
                 <!-- <div id="box1" class="box top_row col1" ></div>
                 <div id="box2" class="box top_row col2" ></div>
@@ -51,11 +53,13 @@
                 <div id="box8" class="box bottom_row col2" ></div>
                 <div id="box9" class="box bottom_row col3" ></div>
                 <div class="clearfix"></div> -->
-            </div>
-            
-            <!-- <input type="button" id="btn" value="Play Now!" onClick="buttonClick()"> -->
+             </div>
+                   <input type="button" id="resetBtn" value="Reset Game!" ng-click="resetClick()"/>
+          </div>
 
-         </div>
+          <!-- ng-click="showDetails = ! showDetails; resetClick()"> -->
+ 
+      </div>
        
     </body>
 </html>
