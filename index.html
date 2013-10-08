@@ -27,9 +27,9 @@
       <div id="wrapper">
         <h1>Tic Tac Toe</h1>
 
-        <input type = "button" id="startBtn" class="btn" value="Start Game!" ng-click="showDetails = ! showDetails" ng-hide="showDetails" />
+        <button id="startBtn" class="btn" value="Start Game!" ng-click="showDetails = ! showDetails" ng-hide="showDetails">Start Game!</button>
 
-        <input type = "button" id="winMsg" class="btn" value="Play again?" ng-show="winMsg" ng-click=" playAgain(); " />
+        <button id="winMsg" class="btn" ng-show="winMsg.length > 0" ng-click="playAgain();"> {{winMsg}} <br /> Play again?</button>
 
         <div class="container" ng-show="showDetails">
            

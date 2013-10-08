@@ -6,8 +6,6 @@ var playerTurn= 1;
 
 var gameEnded = false;
 
-$scope.winMsg = false;
-
 
 
 $scope.clickBox = function(box){
@@ -40,11 +38,14 @@ $scope.win = function(){
 					($scope.gameBoard[wins[i][1]] == $scope.gameBoard[wins[i][2]]))
 					{
 				
-						$scope.winMsg = true;
+						$scope.winMsg = $scope.gameBoard[wins[i][0]] + " win! by " + wins[i][3];
 						// alert($scope.gameBoard[wins[i][0]] + " win! by " + wins[i][3]);
 						gameEnded = true;
 					} 				
 	}
+
+$scope.winMsg = "";
+
 $scope.tie = function(){
 	gameEnded = true;
 
@@ -57,7 +58,7 @@ $scope.tie = function(){
 
 		if (gameEnded)
 		{
-			$scope.winMsg = true;
+			$scope.winMsg = "It's a tie!";
 			// alert("it's a tie!");
 			gameEnded = true;
 		}
@@ -87,7 +88,7 @@ $scope.playAgain = function(){
 		$scope.gameBoard[i] = '';	
 	}
 	// gameBoard = ['','','','','','','','',''];
-	$scope.winMsg = false;
+	$scope.winMsg = "";
 	playerTurn = 1;
 	console.log($scope.gameBoard);
 	// alert( "my button was clicked!");
